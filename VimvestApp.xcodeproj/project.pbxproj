@@ -12,6 +12,7 @@
 		205E406E1F4DEF3700E3D369 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 205E406C1F4DEF3700E3D369 /* Main.storyboard */; };
 		205E40701F4DEF3700E3D369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 205E406F1F4DEF3700E3D369 /* Assets.xcassets */; };
 		205E40731F4DEF3700E3D369 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 205E40711F4DEF3700E3D369 /* LaunchScreen.storyboard */; };
+		205E407B1F4E019200E3D369 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205E407A1F4E019200E3D369 /* APIController.swift */; };
 		B35A92C923F7E65C5D290F82 /* Pods_VimvestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EF242B43ACF50D3B823E64 /* Pods_VimvestApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		205E406F1F4DEF3700E3D369 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		205E40721F4DEF3700E3D369 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		205E40741F4DEF3700E3D369 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		205E407A1F4E019200E3D369 /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		4D87227C3E1A2A7B9CEB6D70 /* Pods-VimvestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VimvestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-VimvestApp/Pods-VimvestApp.release.xcconfig"; sourceTree = "<group>"; };
 		5459BCE0E68B06357E692ADB /* Pods-VimvestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VimvestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VimvestApp/Pods-VimvestApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F9EF242B43ACF50D3B823E64 /* Pods_VimvestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VimvestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +66,7 @@
 				205E40681F4DEF3700E3D369 /* AppDelegate.swift */,
 				205E406A1F4DEF3700E3D369 /* ViewController.swift */,
 				205E406C1F4DEF3700E3D369 /* Main.storyboard */,
+				205E407A1F4E019200E3D369 /* APIController.swift */,
 				205E406F1F4DEF3700E3D369 /* Assets.xcassets */,
 				205E40711F4DEF3700E3D369 /* LaunchScreen.storyboard */,
 				205E40741F4DEF3700E3D369 /* Info.plist */,
@@ -214,6 +217,7 @@
 			files = (
 				205E406B1F4DEF3700E3D369 /* ViewController.swift in Sources */,
 				205E40691F4DEF3700E3D369 /* AppDelegate.swift in Sources */,
+				205E407B1F4E019200E3D369 /* APIController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +383,7 @@
 				205E40791F4DEF3700E3D369 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
