@@ -1,0 +1,27 @@
+PODS:
+  - Alamofire (4.5.0)
+  - Apex (2.0.0)
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - Alamofire
+  - Apex (from `https://github.com/dtartaglia/Apex`)
+  - SwiftyJSON
+
+EXTERNAL SOURCES:
+  Apex:
+    :git: https://github.com/dtartaglia/Apex
+
+CHECKOUT OPTIONS:
+  Apex:
+    :commit: 9536da548d545838f5c8c80dc703821f0ba5e809
+    :git: https://github.com/dtartaglia/Apex
+
+SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  Apex: 6c108e776f8c98341513b3dcc722c1de3aa112ea
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: 38c5f7dc80a2a4a400bea5c786d26bb637de61c7
+
+COCOAPODS: 1.2.1

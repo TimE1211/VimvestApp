@@ -1,0 +1,6 @@
+framework module Apex {
+  umbrella header "Apex-umbrella.h"
+
+  export *
+  module * { export * }
+}
