@@ -4,5 +4,6 @@ target 'VimvestApp' do
   pod 'Apex', '~> 2.0'
   pod 'SwiftyJSON'
   pod 'Alamofire'
+  pod 'GlidingCollection'
 
 end

@@ -10,16 +10,38 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  var apiController = APIController()
+  
+  var tableView: UITableView!
+  
+  var posts = [Post]()
+  
+  @IBOutlet var glidingCollection: GlidingCollection!
+  fileprivate var collectionView: UICollectionView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    apiController.delegate = self
+    apiController.getPosts()
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-
-
 }
 
+extension ViewController: APIControllerDelegate {
+  
+  func didReceivePosts(_ posts: [Post]) {
+    self.posts = posts
+    self.tableView.reloadData()
+  }
+}
+
+extension PostersViewController: GlidingCollectionDatasource
+{
+  func numberOfItems(in collection: GlidingCollection) -> Int
+  {
+    return 1
+  }
+  
+  func glidingCollection(_ collection: GlidingCollection, itemAtIndex index: Int) -> String {
+    return "- Posts"
+  }
+}
