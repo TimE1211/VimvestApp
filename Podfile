@@ -1,7 +1,7 @@
 target 'VimvestApp' do
 
   use_frameworks!
-  pod 'Apex', :git => 'https://github.com/dtartaglia/Apex'
+  pod 'Apex', '~> 2.0'
   pod 'SwiftyJSON'
   pod 'Alamofire'
 
