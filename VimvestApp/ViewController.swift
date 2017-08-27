@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GlidingCollection
 
 class ViewController: UIViewController {
 
@@ -34,14 +35,70 @@ extension ViewController: APIControllerDelegate {
   }
 }
 
-extension PostersViewController: GlidingCollectionDatasource
-{
-  func numberOfItems(in collection: GlidingCollection) -> Int
-  {
+extension ViewController: GlidingCollectionDatasource {
+  func numberOfItems(in collection: GlidingCollection) -> Int {
     return 1
   }
   
   func glidingCollection(_ collection: GlidingCollection, itemAtIndex index: Int) -> String {
     return "- Posts"
   }
+}
+
+extension ViewController {
+  func setupGlidingCollectionView() {
+    glidingCollection.dataSource = self
+    
+    let nib = UINib(nibName: "PosterCell", bundle: nil)
+    collectionView = glidingCollection.collectionView
+    collectionView.register(nib, forCellWithReuseIdentifier: "PosterCell")
+    collectionView.delegate = self
+    collectionView.dataSource = self
+    collectionView.backgroundColor = glidingCollection.backgroundColor
+  }
+}
+
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return 1
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCell", for: indexPath) as? PostCell else { return UICollectionViewCell() }
+    
+    cell.contentView.clipsToBounds = true
+    
+    let layer = cell.layer
+    let config = GlidingConfig.shared
+    layer.shadowOffset = config.cardShadowOffset
+    layer.shadowColor = config.cardShadowColor.cgColor
+    layer.shadowOpacity = config.cardShadowOpacity
+    layer.shadowRadius = config.cardShadowRadius
+    
+    layer.shouldRasterize = true
+    layer.rasterizationScale = UIScreen.main.scale
+    
+    let post = posts[indexPath.row]
+    
+    cell.postImageView.image = UIImage(named: "Blank52")
+    cell.idLabel.text = post.id
+    cell.titleLabel.text = post.title
+    
+    return cell
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let section = glidingCollection.expandedItemIndex
+    let item = indexPath.item
+    print("Section #\(section), item #\(item)")
+    
+    let aPost = posts[item]
+    
+    if let postDetailVC = storyboard?.instantiateViewController(withIdentifier: "PostDetailViewController") as? PostDetailViewController {
+      postDetailVC.post = aPost
+      
+      show(postDetailVC, sender: self)
+    }
+  }
+  
 }

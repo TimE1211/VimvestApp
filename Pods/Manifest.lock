@@ -1,27 +1,21 @@
 PODS:
   - Alamofire (4.5.0)
   - Apex (2.0.0)
+  - GlidingCollection (1.0.3)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire
-  - Apex (from `https://github.com/dtartaglia/Apex`)
+  - Apex (~> 2.0)
+  - GlidingCollection
   - SwiftyJSON
-
-EXTERNAL SOURCES:
-  Apex:
-    :git: https://github.com/dtartaglia/Apex
-
-CHECKOUT OPTIONS:
-  Apex:
-    :commit: 9536da548d545838f5c8c80dc703821f0ba5e809
-    :git: https://github.com/dtartaglia/Apex
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  Apex: 6c108e776f8c98341513b3dcc722c1de3aa112ea
+  Apex: a288b778cda70fc52d2a6b411bcc7c29f073e717
+  GlidingCollection: 99c25d3fbde25af6591ba97148caf2af3ffc3ef0
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 38c5f7dc80a2a4a400bea5c786d26bb637de61c7
+PODFILE CHECKSUM: dab9150116594b8d9b2860c35a1b0ee276149de7
 
 COCOAPODS: 1.2.1
