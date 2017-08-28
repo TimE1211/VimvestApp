@@ -11,9 +11,4 @@ import UIKit
 class PostCell: UICollectionViewCell {
   @IBOutlet weak var postImageView: UIImageView!
   @IBOutlet weak var idLabel: UILabel!
-
-  override func awakeFromNib() {
-    super.awakeFromNib()
-    }
-
 }

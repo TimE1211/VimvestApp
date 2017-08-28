@@ -9,6 +9,9 @@
 import UIKit
 import GlidingCollection
 
+protocol UIViewControllerAnimatedTransitioning {
+  
+}
 class ViewController: UIViewController {
 
   var apiController = APIController()
@@ -22,6 +25,7 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     apiController.delegate = self
     apiController.getPosts()
+    setupGlidingCollectionView()
   }
 }
 
@@ -32,6 +36,19 @@ extension ViewController: APIControllerDelegate {
   }
 }
 
+extension ViewController {
+  func setupGlidingCollectionView() {
+    glidingCollection.dataSource = self
+    
+    let nib = UINib(nibName: "PostCell", bundle: nil)
+    collectionView = glidingCollection.collectionView
+    collectionView.register(nib, forCellWithReuseIdentifier: "PostCell")
+    collectionView.delegate = self
+    collectionView.dataSource = self
+    collectionView.backgroundColor = glidingCollection.backgroundColor
+  }
+}
+
 extension ViewController: GlidingCollectionDatasource {
   func numberOfItems(in collection: GlidingCollection) -> Int {
     return 1
@@ -39,19 +56,6 @@ extension ViewController: GlidingCollectionDatasource {
   
   func glidingCollection(_ collection: GlidingCollection, itemAtIndex index: Int) -> String {
     return "- Posts"
-  }
-}
-
-extension ViewController {
-  func setupGlidingCollectionView() {
-    glidingCollection.dataSource = self
-    
-    let nib = UINib(nibName: "PosterCell", bundle: nil)
-    collectionView = glidingCollection.collectionView
-    collectionView.register(nib, forCellWithReuseIdentifier: "PosterCell")
-    collectionView.delegate = self
-    collectionView.dataSource = self
-    collectionView.backgroundColor = glidingCollection.backgroundColor
   }
 }
 
@@ -84,17 +88,18 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    let section = glidingCollection.expandedItemIndex
-    let item = indexPath.item
-    print("Section #\(section), item #\(item)")
-    
-    let aPost = posts[item]
+    let aPost = posts[indexPath.row]
     
     if let postDetailVC = storyboard?.instantiateViewController(withIdentifier: "PostDetailViewController") as? PostDetailViewController {
       postDetailVC.post = aPost
+      postDetailVC.postImage = UIImage(named: "Blank52")
       
       show(postDetailVC, sender: self)
     }
   }
+  
+}
+
+extension ViewController {
   
 }

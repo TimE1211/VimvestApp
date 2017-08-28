@@ -11,6 +11,7 @@ import UIKit
 class PostDetailViewController: UIViewController {
   
   var post: Post?
+  var postImage: UIImage?
   
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var postImageView: UIImageView!
@@ -22,6 +23,7 @@ class PostDetailViewController: UIViewController {
     
     titleLabel.text = post?.title
     overviewTextView.text = post?.body
+    postImageView.image = postImage
   }
 }
 
