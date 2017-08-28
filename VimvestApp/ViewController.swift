@@ -9,9 +9,6 @@
 import UIKit
 import GlidingCollection
 
-protocol UIViewControllerAnimatedTransitioning {
-  
-}
 class ViewController: UIViewController {
 
   var apiController = APIController()
@@ -20,6 +17,8 @@ class ViewController: UIViewController {
   
   @IBOutlet var glidingCollection: GlidingCollection!
   fileprivate var collectionView: UICollectionView!
+  
+  let transition = PopAnimator()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -92,7 +91,8 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     if let postDetailVC = storyboard?.instantiateViewController(withIdentifier: "PostDetailViewController") as? PostDetailViewController {
       postDetailVC.post = aPost
-      postDetailVC.postImage = UIImage(named: "Blank52")
+      let selectedImage = UIImage(named: "Blank52")
+      postDetailVC.postImage = selectedImage
       
       show(postDetailVC, sender: self)
     }
@@ -100,6 +100,14 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
   
 }
 
-extension ViewController {
+extension ViewController: UIViewControllerTransitioningDelegate {
+  func animationController(forPresented presented: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    transition.presenting = true
+    return transition
+  }
   
+  func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    transition.presenting = false
+    return transition
+  }
 }

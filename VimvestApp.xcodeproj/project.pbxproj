@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		204AF3EB1F54713400662CA8 /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204AF3EA1F54713400662CA8 /* PopAnimator.swift */; };
 		205E40691F4DEF3700E3D369 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205E40681F4DEF3700E3D369 /* AppDelegate.swift */; };
 		205E406B1F4DEF3700E3D369 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205E406A1F4DEF3700E3D369 /* ViewController.swift */; };
 		205E406E1F4DEF3700E3D369 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 205E406C1F4DEF3700E3D369 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		204AF3EA1F54713400662CA8 /* PopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
 		205E40651F4DEF3700E3D369 /* VimvestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VimvestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		205E40681F4DEF3700E3D369 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		205E406A1F4DEF3700E3D369 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				205E40681F4DEF3700E3D369 /* AppDelegate.swift */,
 				205E407E1F533E2A00E3D369 /* Blank52.png */,
 				205E406A1F4DEF3700E3D369 /* ViewController.swift */,
+				204AF3EA1F54713400662CA8 /* PopAnimator.swift */,
 				205E40821F5340AB00E3D369 /* PostDetailViewController.swift */,
 				205E40841F5348B600E3D369 /* PostCell.swift */,
 				205E40851F5348B600E3D369 /* PostCell.xib */,
@@ -232,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				204AF3EB1F54713400662CA8 /* PopAnimator.swift in Sources */,
 				205E406B1F4DEF3700E3D369 /* ViewController.swift in Sources */,
 				205E40691F4DEF3700E3D369 /* AppDelegate.swift in Sources */,
 				205E40831F5340AB00E3D369 /* PostDetailViewController.swift in Sources */,
