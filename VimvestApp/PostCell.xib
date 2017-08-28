@@ -20,10 +20,10 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iuf-yH-NgE">
-                        <rect key="frame" x="0.0" y="0.0" width="238" height="268"/>
+                        <rect key="frame" x="0.0" y="0.0" width="238" height="238.5"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIf-71-A5E">
-                        <rect key="frame" x="0.0" y="268" width="238" height="30"/>
+                        <rect key="frame" x="0.0" y="238.5" width="238" height="59.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -31,7 +31,7 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="qIf-71-A5E" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.1" id="5CN-77-Lp2"/>
+                <constraint firstItem="qIf-71-A5E" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.2" id="5CN-77-Lp2"/>
                 <constraint firstItem="iuf-yH-NgE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="GZo-5e-B1L"/>
                 <constraint firstAttribute="trailing" secondItem="iuf-yH-NgE" secondAttribute="trailing" id="HtC-lO-9Hi"/>
                 <constraint firstItem="iuf-yH-NgE" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="KnV-mH-9L7"/>

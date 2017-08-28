@@ -94,7 +94,8 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
       let selectedImage = UIImage(named: "Blank52")
       postDetailVC.postImage = selectedImage
       
-      show(postDetailVC, sender: self)
+      present(postDetailVC, animated: true, completion: nil)
+      postDetailVC.transitioningDelegate = self
     }
   }
   

@@ -10,7 +10,7 @@ import UIKit
 //https://www.raywenderlich.com/146692/ios-animation-tutorial-custom-view-controller-presentation-transitions-2
 
 class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
-  let duration = 1.0
+  let duration = 2.0
   var presenting = true
   var originFrame = CGRect.zero
   
@@ -24,6 +24,7 @@ class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     containerView.addSubview(toView)
     toView.alpha = 0.0
+    
     UIView.animate(withDuration: duration, animations: {
       toView.alpha = 1.0
     }, completion: { _ in
