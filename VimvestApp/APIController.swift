@@ -18,23 +18,17 @@ protocol APIControllerDelegate
 
 class APIController
 {
-  let baseURL = "https://jsonplaceholder.typicode.com/"
-  var postsURL: String {
-    return baseURL + "/posts"
-  }
   
   var posts = [Post]()
   
   var delegate: APIControllerDelegate?
   
-  func getPosts()
-  {
-    let sessionURL = postsURL
+  func getPosts() {
+    let sessionURL = "https://jsonplaceholder.typicode.com/posts"
     Alamofire.request(sessionURL).responseJSON { responseData in
       if let value = responseData.result.value
       {
         let postsJson = JSON(value).arrayValue
-        
         for aPostJson in postsJson {
           let aPost = Post(postJson: aPostJson)
           self.posts.append(aPost)

@@ -16,6 +16,8 @@
 		205E407D1F520C4F00E3D369 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205E407C1F520C4F00E3D369 /* Post.swift */; };
 		205E407F1F533E2A00E3D369 /* Blank52.png in Resources */ = {isa = PBXBuildFile; fileRef = 205E407E1F533E2A00E3D369 /* Blank52.png */; };
 		205E40831F5340AB00E3D369 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205E40821F5340AB00E3D369 /* PostDetailViewController.swift */; };
+		205E40861F5348B600E3D369 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205E40841F5348B600E3D369 /* PostCell.swift */; };
+		205E40871F5348B600E3D369 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 205E40851F5348B600E3D369 /* PostCell.xib */; };
 		B35A92C923F7E65C5D290F82 /* Pods_VimvestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EF242B43ACF50D3B823E64 /* Pods_VimvestApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +33,8 @@
 		205E407C1F520C4F00E3D369 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		205E407E1F533E2A00E3D369 /* Blank52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blank52.png; sourceTree = "<group>"; };
 		205E40821F5340AB00E3D369 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		205E40841F5348B600E3D369 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		205E40851F5348B600E3D369 /* PostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		4D87227C3E1A2A7B9CEB6D70 /* Pods-VimvestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VimvestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-VimvestApp/Pods-VimvestApp.release.xcconfig"; sourceTree = "<group>"; };
 		5459BCE0E68B06357E692ADB /* Pods-VimvestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VimvestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VimvestApp/Pods-VimvestApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F9EF242B43ACF50D3B823E64 /* Pods_VimvestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VimvestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +77,8 @@
 				205E407E1F533E2A00E3D369 /* Blank52.png */,
 				205E406A1F4DEF3700E3D369 /* ViewController.swift */,
 				205E40821F5340AB00E3D369 /* PostDetailViewController.swift */,
+				205E40841F5348B600E3D369 /* PostCell.swift */,
+				205E40851F5348B600E3D369 /* PostCell.xib */,
 				205E407A1F4E019200E3D369 /* APIController.swift */,
 				205E407C1F520C4F00E3D369 /* Post.swift */,
 				205E406C1F4DEF3700E3D369 /* Main.storyboard */,
@@ -165,6 +171,7 @@
 			files = (
 				205E40731F4DEF3700E3D369 /* LaunchScreen.storyboard in Resources */,
 				205E407F1F533E2A00E3D369 /* Blank52.png in Resources */,
+				205E40871F5348B600E3D369 /* PostCell.xib in Resources */,
 				205E40701F4DEF3700E3D369 /* Assets.xcassets in Resources */,
 				205E406E1F4DEF3700E3D369 /* Main.storyboard in Resources */,
 			);
@@ -230,6 +237,7 @@
 				205E40831F5340AB00E3D369 /* PostDetailViewController.swift in Sources */,
 				205E407B1F4E019200E3D369 /* APIController.swift in Sources */,
 				205E407D1F520C4F00E3D369 /* Post.swift in Sources */,
+				205E40861F5348B600E3D369 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

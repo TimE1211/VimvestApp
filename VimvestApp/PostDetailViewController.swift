@@ -11,19 +11,17 @@ import UIKit
 class PostDetailViewController: UIViewController {
   
   var post: Post?
-
-  override func viewDidLoad() {
+  
+  @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var postImageView: UIImageView!
+  @IBOutlet weak var overviewTextView: UITextView!
+  
+  override func viewDidLoad()
+  {
     super.viewDidLoad()
+    
+    titleLabel.text = post?.title
+    overviewTextView.text = post?.body
   }
-
-  /*
-  // MARK: - Navigation
-
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      // Get the new view controller using segue.destinationViewController.
-      // Pass the selected object to the new view controller.
-  }
-  */
-
 }
+

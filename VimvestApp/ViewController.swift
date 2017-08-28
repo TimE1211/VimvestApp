@@ -13,8 +13,6 @@ class ViewController: UIViewController {
 
   var apiController = APIController()
   
-  var tableView: UITableView!
-  
   var posts = [Post]()
   
   @IBOutlet var glidingCollection: GlidingCollection!
@@ -28,10 +26,9 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: APIControllerDelegate {
-  
   func didReceivePosts(_ posts: [Post]) {
     self.posts = posts
-    self.tableView.reloadData()
+    self.collectionView.reloadData()
   }
 }
 
@@ -60,7 +57,7 @@ extension ViewController {
 
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 1
+    return posts.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -81,8 +78,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     let post = posts[indexPath.row]
     
     cell.postImageView.image = UIImage(named: "Blank52")
-    cell.idLabel.text = post.id
-    cell.titleLabel.text = post.title
+    cell.idLabel.text = String(post.id) + ": " + post.title
     
     return cell
   }
