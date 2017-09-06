@@ -14,11 +14,13 @@ class Post
   let id: Int
   let title: String
   let body: String
+  let image: UIImage
   
   init(postJson: JSON)
   {
     id = postJson["id"].intValue
     title = postJson["title"].stringValue
     body = postJson["body"].stringValue
+    image = UIImage(named: "Blank52")!
   }
 }

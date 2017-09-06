@@ -19,12 +19,16 @@ class ViewController: UIViewController {
   fileprivate var collectionView: UICollectionView!
   
   let transition = PopAnimator()
+  var selectedImage: UIImageView?
   
   override func viewDidLoad() {
     super.viewDidLoad()
     apiController.delegate = self
     apiController.getPosts()
     setupGlidingCollectionView()
+    transition.dismissCompletion = {
+      self.selectedImage?.isHidden = false
+    }
   }
 }
 
@@ -78,10 +82,11 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     layer.shouldRasterize = true
     layer.rasterizationScale = UIScreen.main.scale
     
-    let post = posts[indexPath.row]
+    let aPost = posts[indexPath.row]
     
-    cell.postImageView.image = UIImage(named: "Blank52")
-    cell.idLabel.text = String(post.id) + ": " + post.title
+    cell.postImageView.image = aPost.image
+
+    cell.idLabel.text = String(aPost.id) + ": " + aPost.title
     
     return cell
   }
@@ -91,8 +96,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     if let postDetailVC = storyboard?.instantiateViewController(withIdentifier: "PostDetailViewController") as? PostDetailViewController {
       postDetailVC.post = aPost
-      let selectedImage = UIImage(named: "Blank52")
-      postDetailVC.postImage = selectedImage
+      postDetailVC.postImage = aPost.image
       
       present(postDetailVC, animated: true, completion: nil)
       postDetailVC.transitioningDelegate = self
@@ -103,7 +107,11 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 
 extension ViewController: UIViewControllerTransitioningDelegate {
   func animationController(forPresented presented: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    transition.originFrame =
+      selectedImage!.superview!.convert(selectedImage!.frame, to: nil)
+    
     transition.presenting = true
+    selectedImage!.isHidden = true
     return transition
   }
   
